@@ -8,12 +8,10 @@ Open server directory.
 
 #### Node Course
 
-[Node Tutorial and Projects Course](https://www.udemy.com/course/nodejs-tutorial-and-projects-course/?referralCode=E94792BEAE9ADD204BC7)
-
 #### Starter
 
 - run "npm install" and "npm run dev"
-- Grocery Bud structure
+
 
 #### Explore Setup
 
@@ -92,9 +90,7 @@ try {
 
 CRUD stands for Create, Read, Update, and Delete, which are the basic operations that can be performed on a database or web application. These operations allow users to create new data, read existing data, update data, and delete data when necessary.
 
-#### Docs
 
-[Task API Docs](https://documenter.getpostman.com/view/18152321/2s93RTSDLn)
 
 #### UseEffect Approach
 
@@ -119,8 +115,6 @@ React Query is a state management library that simplifies the process of fetchin
 
 - tons of features
 - versions
-
-[React Query](https://tanstack.com/query/v4/docs/react/overview)
 
 #### Install
 
