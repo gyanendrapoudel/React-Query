@@ -4,21 +4,22 @@ import customFetch from './utils';
 const Items = ({ items }) => {
   const {data, isLoading, isError, error} = useQuery({
     queryKey:['tasks'],
-    queryFn:()=>customFetch.get("/something")
+    queryFn:()=>customFetch.get("/")
   })
   if(isLoading){
     return <div style={{ marginTop: '2rem' }}>Loading...</div>
   }
   // react query error
-  // if(isError){
-  //   return <div style={{ marginTop: '2rem' }}>There was an error...</div>
+  if(isError){
+    return <div style={{ marginTop: '2rem' }}>There was an error...</div>
 
-  // }
-  // axios error
-  if(error){
-    return <div style={{ marginTop: '2rem' }}>{error.message}</div>
-  
   }
+ 
+  // axios error
+  // if(error){
+  //   return <div style={{ marginTop: '2rem' }}>{error.message}</div>
+  
+  // }
 
   return (
     <div className='items'>
