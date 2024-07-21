@@ -14,10 +14,21 @@ const SingleItem = ({ item }) => {
       toast.error(error.response.data)
     },
   })
+  const {mutate:deleteTask, isLoading}= useMutation({
+    mutationFn:(id)=>customFetch.delete(`/${id}`),
+    onSuccess:()=>{
+      queryClient.invalidateQueries({queryKey:['tasks']})
+      toast.success("task deleted")
+    }
+
+  })
   const handleChange=(id)=>{
    item.isDone=!item.isDone
-   editTask(id)
-   
+   editTask(id)   
+  }
+
+  const handleDelete = (id)=>{
+    deleteTask(id)
   }
   return (
     <div className='single-item'>
@@ -37,7 +48,8 @@ const SingleItem = ({ item }) => {
       <button
         className='btn remove-btn'
         type='button'
-        onClick={() => console.log('delete task')}
+        disabled={isLoading}
+        onClick={() => deleteTask(item.id)}
       >
         delete
       </button>
